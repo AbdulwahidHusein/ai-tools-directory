@@ -40,7 +40,7 @@ export default async function Home() {
   const featuredTools = await getTools(8);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section with teal gradient */}
       <section className="bg-gradient-to-r from-teal-500 to-cyan-600 py-24 px-4 md:px-8 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIgMS44LTQgNC00czQgMS44IDQgNC0xLjggNC00IDQtNC0xLjgtNC00eiIvPjxwYXRoIGQ9Ik0xNiA0YzAtMi4yIDEuOC00IDQtNHM0IDEuOCA0IDQtMS44IDQtNCA0LTQtMS44LTQtNHoiLz48cGF0aCBkPSJNMTYgNDRjMC0yLjIgMS44LTQgNC00czQgMS44IDQgNC0xLjggNC00IDQtNC0xLjgtNC00eiIvPjwvZz48L2c+PC9zdmc+')]">
@@ -68,6 +68,31 @@ export default async function Home() {
                 Search
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Browse AI Tools Section - IMPROVED VERSION */}
+      <section className="py-16 px-4 md:px-8 bg-gradient-to-b from-teal-50 to-white">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Browse AI Tools</h2>
+          <p className="text-xl text-gray-700 mb-10 max-w-3xl mx-auto">
+            Discover our collection of AI tools to enhance your workflow, creativity, productivity, and more.
+          </p>
+          
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
+            <Link href="/tools" className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg transition-colors font-medium">
+              All Tools
+            </Link>
+            {categories?.slice(0, 15).map((category) => (
+              <Link 
+                key={category.slug}
+                href={`/categories/${category.slug}`}
+                className="bg-white hover:bg-gray-100 text-gray-800 px-4 py-2 rounded-lg transition-colors border border-gray-200 shadow-sm hover:shadow"
+              >
+                {category.name}
+              </Link>
+            ))}
           </div>
         </div>
       </section>
