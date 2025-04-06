@@ -35,7 +35,15 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function ToolPage({ params }: { params: { slug: string } }) {
+// Define the correct props interface for Next.js App Router pages
+type ToolPageProps = {
+  params: {
+    slug: string
+  },
+  searchParams?: Record<string, string | string[] | undefined>
+}
+
+export default async function ToolPage({ params }: ToolPageProps) {
   const toolData = await getToolBySlug(params.slug);
   
   if (!toolData) {

@@ -62,7 +62,15 @@ function getGradient(input: string): string {
   return gradients[index];
 }
 
-export default async function CategoryPage({ params }: { params: { slug: string } }) {
+// Define the correct props interface for Next.js App Router pages
+type CategoryPageProps = {
+  params: {
+    slug: string
+  },
+  searchParams?: Record<string, string | string[] | undefined>
+}
+
+export default async function CategoryPage({ params }: CategoryPageProps) {
   const categoryData = await getCategoryWithTools(params.slug, 20, 0);
   
   if (!categoryData) {
