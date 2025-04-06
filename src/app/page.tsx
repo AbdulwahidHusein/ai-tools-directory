@@ -7,7 +7,7 @@ import React from "react";
 // SEO metadata
 export const metadata: Metadata = {
   title: "AI Tools Directory | Discover 6,000+ AI Tools for Every Need",
-  description: "Browse our curated collection of 6,000+ AI tools across 35+ categories. Find the perfect AI solutions for content creation, image generation, productivity and more.",
+  description: "Browse our curated collection of 8,000+ AI tools across 35+ categories. Find the perfect AI solutions for content creation, image generation, productivity and more.",
   keywords: "AI tools, artificial intelligence, machine learning, AI directory, AI software",
 };
 
