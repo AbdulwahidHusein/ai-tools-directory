@@ -1,0 +1,16 @@
+**/node_modules/*
+**/out/*
+**/.next/*
+src/app/about/page.tsx
+src/app/api/search/route.ts
+src/app/categories/[slug]/page.tsx  
+src/app/categories/page.tsx
+src/app/contact/page.tsx
+src/app/page.tsx
+src/app/search/client.tsx
+src/app/search/page.tsx
+src/app/tools/[slug]/page.tsx
+src/components/Navigation.tsx
+src/lib/db.ts
+src/lib/mongodb.ts
+src/models/Tool.ts 
